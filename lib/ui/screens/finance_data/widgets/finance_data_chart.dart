@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,12 +23,20 @@ class LinearChart extends StatelessWidget {
           ),
           child: LineChart(
           LineChartData(
-            clipData: FlClipData.all(),
+            clipData: FlClipData(
+              left: true,
+              top: true,
+              bottom: false,
+              right: true,
+            ),
             minX: 1,
             maxX: 10,
             minY: ( state is CurrencyLoaded ) 
-              ? state.currency.close.first
+              ? state.currency.close.reduce(min)
               : 10,
+            maxY: ( state is CurrencyLoaded ) 
+              ? state.currency.close.reduce(max)
+              : 1000,
             gridData: FlGridData(
               getDrawingVerticalLine: (value) {
                 return FlLine(
@@ -41,7 +51,6 @@ class LinearChart extends StatelessWidget {
             ),
             lineBarsData: [
               LineChartBarData(
-                
                 isCurved: true,
                 colors: [
                   Theme.of(context).focusColor,
@@ -97,7 +106,7 @@ class LinearChart extends StatelessWidget {
               )
             ),
           ),
-          swapAnimationDuration: const Duration( seconds: 3 ),
+          swapAnimationDuration: const Duration( seconds: 1 ),
       ),
         );
       }
