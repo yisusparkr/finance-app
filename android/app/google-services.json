@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1034829220245",
+    "project_id": "finance-app-7c6f3",
+    "storage_bucket": "finance-app-7c6f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034829220245:android:7235061e6c1ccd9924ce9c",
+        "android_client_info": {
+          "package_name": "com.jesuscoronado.financeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034829220245-9uju0toc8a5jqlu7gjik8gu2tg6056sd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiOdKWCbgzgcjRSk7iK-onm0p-iTj9Zbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034829220245-9uju0toc8a5jqlu7gjik8gu2tg6056sd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

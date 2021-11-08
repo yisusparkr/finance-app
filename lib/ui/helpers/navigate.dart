@@ -34,6 +34,8 @@ void navigateBack( BuildContext context ) => Navigator.of(context).pop();
 Route _androidNavigation( BuildContext context, Widget screen ) {
   return PageRouteBuilder(
     pageBuilder: (_, __, ___) => screen,
+    transitionDuration: const Duration( milliseconds: 300 ),
+    reverseTransitionDuration: const Duration( milliseconds: 300 ),
     transitionsBuilder: (_, animation, __, child) {
       return FadeTransition(
         opacity: Tween<double>(

@@ -6,11 +6,13 @@ class CustomMaterialButton extends StatelessWidget {
     required this.label,
     required this.icon,
     required this.onPressed,
+    this.heroTag,
     this.color,
     this.splashColor,
     this.highlightColor
   }) : super(key: key);
 
+  final String? heroTag;
   final String label;
   final Icon icon;
   final Color? color;
@@ -37,7 +39,12 @@ class CustomMaterialButton extends StatelessWidget {
             style: Theme.of(context).textTheme.headline2,
           ),
           const SizedBox( width: 10 ),
-          icon
+          ( heroTag != null ) ?
+          Hero(
+            tag: Key(heroTag!), 
+            child: icon
+          )
+          : icon
         ],
       ),
       onPressed: onPressed

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'finance_types_menu.dart';
-import 'finance_types_back_button.dart';
+import 'widgets/finance_types_menu.dart';
+import 'widgets/finance_types_back_button.dart';
 
 class FinanceTypesScreen extends StatelessWidget {
   const FinanceTypesScreen({ 

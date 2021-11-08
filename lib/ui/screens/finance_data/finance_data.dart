@@ -7,8 +7,13 @@ import 'widgets/finance_data_compared.dart';
 
 class FinanceDataScreen extends StatelessWidget {
   const FinanceDataScreen({ 
-    Key? key 
+    Key? key,
+    required this.currency,
+    required this.icon
   }) : super(key: key);
+
+  final String currency;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +21,18 @@ class FinanceDataScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            children: const [
-              FinanceDataTopBar(),
-              SizedBox( height: 20 ),
-              FinanceDataTitle(),
-              SizedBox( height: 50 ),
-              LinearChart(),
-              SizedBox( height: 50 ),
-              FinanceDataCompared()
+            children: [
+              FinanceDataTopBar( 
+                currency: currency, 
+                icon: icon 
+              ),
+              const SizedBox( height: 20 ),
+              const FinanceDataTitle(),
+              const SizedBox( height: 50 ),
+              const LinearChart(),
+              const SizedBox( height: 50 ),
+              const FinanceDataCompared(),
+              const SizedBox( height: 20 ),
             ],
           ),
         ),

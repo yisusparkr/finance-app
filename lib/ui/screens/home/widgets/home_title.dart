@@ -7,7 +7,12 @@ import '/constants/contants.dart';
 class HomeTitle extends StatelessWidget {
   const HomeTitle({
     Key? key,
+    required this.name,
+    required this.isNew
   }) : super(key: key);
+
+  final String name;
+  final bool isNew;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,9 @@ class HomeTitle extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '${Constants.welcomeBack} Axel!',
+              ( !isNew ) 
+                ? '${Constants.welcomeBack} $name!'
+                : '${Constants.welcome} $name!',
               style: Theme.of(context).textTheme.bodyText1
             ),
             const SizedBox( height: 5 ),

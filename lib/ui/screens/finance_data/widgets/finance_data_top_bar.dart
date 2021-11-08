@@ -7,7 +7,12 @@ import 'package:finance_app/ui/helpers/helpers.dart';
 class FinanceDataTopBar extends StatelessWidget {
   const FinanceDataTopBar({
     Key? key,
+    required this.currency,
+    required this.icon
   }) : super(key: key);
+
+  final String currency;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +28,13 @@ class FinanceDataTopBar extends StatelessWidget {
           maxRadius: 25,
           backgroundColor: Colors.indigo,
           child: LineIcon(
-            LineIcons.shekelSign,
+            icon,
             color: Colors.white,
           ),
         ),
         const SizedBox( width: 8 ),
         Text(
-          'Nasdaq',
+          currency,
           style: Theme.of(context).textTheme.bodyText2?.copyWith(
             fontSize: 22
           ),

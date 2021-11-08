@@ -9,7 +9,7 @@ class Constants {
 
   // Sign In Screen constants
   static const String welcomeTo  = 'Welcome to \n';
-  static const String financeApp = 'finance app';
+  static const String financeApp = 'Finance App';
   static const String signIn     = 'Sign In';
   static const String withoutAccount = 'Don\'t have an account? ';
 
@@ -21,10 +21,11 @@ class Constants {
   static const String fullName = 'Full Name';
   static const String email    = 'Email';
   static const String rfc      = 'rfc';
-  static const String password = 'password';
+  static const String password = 'Password';
   static const String signUp   = 'Sign Up';
 
   // Home Screen constants
+  static const String welcome = 'Welcome,';
   static const String welcomeBack = 'Welcome back,';
   static const String letsDo      = 'Let\'s do something amazing';
   static const String check       = 'Check History';
@@ -40,6 +41,7 @@ class Constants {
   static const String losing = 'Losing';
 
   // Assets
+  static const String config = 'assets/config.json';
   static const String signInLottie = 'assets/lotties/sign_in_lottie.json';
 
 }

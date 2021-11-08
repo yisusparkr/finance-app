@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '/ui/helpers/helpers.dart';
-import '/ui/screens/home/home.dart';
 import '/constants/contants.dart';
 
 class SignInButton extends StatelessWidget {
   const SignInButton({
     Key? key,
+    required this.onPressed
   }) : super(key: key);
+
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class SignInButton extends StatelessWidget {
         Constants.signIn,
         style: Theme.of(context).textTheme.headline2,
       ),
-      onPressed: () => navigateTo(context, const HomeScreen(), true)
+      onPressed: onPressed
     );
   }
 }

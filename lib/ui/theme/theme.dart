@@ -57,6 +57,20 @@ final theme = ThemeData(
         color: _primary,
         width: 1.5
       ),
-    )
+    ),
+    errorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(15)),
+      borderSide: BorderSide(
+        color: Colors.red,
+        width: 1.5
+      ),
+    ),
+    focusedErrorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(25)),
+      borderSide: BorderSide(
+        color: _primary,
+        width: 1.5
+      ),
+    ),
   )
 );
