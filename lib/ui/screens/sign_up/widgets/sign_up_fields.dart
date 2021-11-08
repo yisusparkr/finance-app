@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'sign_up_button.dart';
 import '/data/models/user.dart';
 import '/constants/contants.dart';
+import '/ui/utils/validations.dart';
 import '/bloc/sign_up/sign_up_bloc.dart';
 
 class SignUpFields extends StatelessWidget {
@@ -27,6 +28,8 @@ class SignUpFields extends StatelessWidget {
         children: [
           TextFormField(
             controller: _fullNameController,
+            validator: (value) => validateFullName(value),
+            textCapitalization: TextCapitalization.words,
             style: Theme.of(context).textTheme.headline1,
             decoration: InputDecoration(
               hintText: Constants.fullName,
@@ -38,6 +41,7 @@ class SignUpFields extends StatelessWidget {
           const SizedBox( height: 15 ),
           TextFormField(
             controller: _emailController,
+            validator: (value) => validateEmail(value),
             style: Theme.of(context).textTheme.headline1,
             decoration: InputDecoration(
               hintText: Constants.email,
@@ -49,6 +53,8 @@ class SignUpFields extends StatelessWidget {
           const SizedBox( height: 15 ),
           TextFormField(
             controller: _rfcController,
+            validator: (value) => validateRfc(value),
+            textCapitalization: TextCapitalization.characters,
             style: Theme.of(context).textTheme.headline1,
             decoration: InputDecoration(
               hintText: Constants.rfc,
@@ -60,6 +66,7 @@ class SignUpFields extends StatelessWidget {
           const SizedBox( height: 15 ),
           TextFormField(
             controller: _passwordController,
+            validator: (value) => validatePassword(value),
             obscureText: true,
             style: Theme.of(context).textTheme.headline1,
             decoration: InputDecoration(

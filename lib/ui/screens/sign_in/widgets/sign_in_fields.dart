@@ -40,6 +40,7 @@ class SignInFields extends StatelessWidget {
           TextFormField(
             controller: _rfcController,
             validator: (value) => validateRfc(value),
+            textCapitalization: TextCapitalization.characters,
             style: Theme.of(context).textTheme.headline1,
             decoration: InputDecoration(
               hintText: Constants.rfc.toUpperCase(),
