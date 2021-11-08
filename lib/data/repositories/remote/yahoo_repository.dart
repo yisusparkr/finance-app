@@ -5,6 +5,11 @@ import 'package:flutter/services.dart';
 import '/constants/contants.dart';
 import '/data/models/currency.dart';
 
+/*
+  [YahooRepository] is a class that interact as
+  our Currency API repository, help us to
+  contact to Yahoo API and return a response.
+*/
 class YahooRepository {
 
   static const _url = 'https://yfapi.net/v8/finance/spark';

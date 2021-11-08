@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+/*
+  [Theme] is just a final variable of type
+  [ThemeData] but modified with our prefered
+  values to the diferent options, like [colors],
+  and diferent [text] theme;
+*/
+
 const _primary    = Color(0xff0E62F6);
 const _secondary   = Color(0xff1B439C);
 const _background = Color(0xff0A0B1E);

@@ -1,6 +1,11 @@
 import 'package:finance_app/data/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+/*
+  [AuthRepository] is a class that interact as
+  our authentication repository, it help us to
+  contact to Firebase Auth and return a response.
+*/
 class AuthRepository {
   final _firebaseAuth = FirebaseAuth.instance;
 

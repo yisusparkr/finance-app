@@ -2,6 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '/data/models/user.dart';
 
+/*
+  [FirestoreRepository] is a class that interact as
+  our database repository, it help us to
+  contact to Firebase Firestore and return a response.
+*/
 class FirestoreRepository {
 
   final _firestore = FirebaseFirestore.instance.collection('users');

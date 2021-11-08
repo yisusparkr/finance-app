@@ -7,6 +7,13 @@ import '/data/repositories/remote/yahoo_repository.dart';
 part 'currency_event.dart';
 part 'currency_state.dart';
 
+/*
+  [CurrencyBloc] is a class that help us to
+  manage the state when the user try to
+  request the currency data, contacting with [YahooRepository],
+  depending of the repository response it
+  updates the state.
+*/
 class CurrencyBloc extends Bloc<CurrencyEvent, CurrencyState> {
 
   final YahooRepository _yahooRepository;

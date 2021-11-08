@@ -1,3 +1,8 @@
+/*
+  [Constants] is a [Singleton] class that
+  contains the entire strings used
+  in the app.
+*/
 class Constants {
 
   static final _constants = Constants._internal();

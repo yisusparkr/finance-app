@@ -4,6 +4,11 @@ Currency currencyFromJson(String str) => Currency.fromJson(json.decode(str));
 
 String currencyToJson(Currency data) => json.encode(data.toJson());
 
+/*
+  [Currency] is a class used to catch the
+  response from [YahooRepository],
+  generated with https://quicktype.io/
+*/
 class Currency {
   Currency({
     required this.symbol,

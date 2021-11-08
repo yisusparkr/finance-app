@@ -9,6 +9,14 @@ import '/data/repositories/remote/firestore_repository.dart';
 part 'sign_up_event.dart';
 part 'sign_up_state.dart';
 
+/*
+  [SignUpBloc] is a class that help us to
+  manage the state when the user try to
+  Sign Up, contacting with [AuthRepository],
+  [FirestoreRepository] and [RfcRepository], and
+  depending of the repositories response it
+  updates the state.
+*/
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
   final AuthRepository _authRepository;

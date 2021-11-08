@@ -1,3 +1,7 @@
+/*
+  [UserModel] is a class used to store
+  the user data.
+*/
 class UserModel {
   UserModel({
     this.fullName, 

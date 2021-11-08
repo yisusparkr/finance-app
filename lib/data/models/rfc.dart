@@ -3,7 +3,11 @@ import 'dart:convert';
 RfcResponse rfcResponseFromJson(String str) => RfcResponse.fromJson(json.decode(str));
 
 String rfcResponseToJson(RfcResponse data) => json.encode(data.toJson());
-
+/*
+  [RfcResponse] is class used to catch
+  the response from the [RfcRepository],
+  generated with https://quicktype.io/
+*/
 class RfcResponse {
   RfcResponse({
     this.isValid,

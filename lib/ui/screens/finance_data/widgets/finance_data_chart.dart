@@ -11,19 +11,22 @@ class LinearChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only( left: 5, right: 25 ),
-      constraints: const BoxConstraints(
-        maxHeight: 300,
-        maxWidth: 600
-      ),
-      child: BlocBuilder<CurrencyBloc, CurrencyState>(
-        builder: ( context, state ) {
-          return LineChart(
+    return BlocBuilder<CurrencyBloc, CurrencyState>(
+      builder: ( context, state ) {
+        return Container(
+          padding: const EdgeInsets.only( left: 5, right: 25 ),
+          constraints: const BoxConstraints(
+            maxHeight: 300,
+            maxWidth: 600
+          ),
+          child: LineChart(
           LineChartData(
+            clipData: FlClipData.all(),
             minX: 1,
             maxX: 10,
-            minY: 0,
+            minY: ( state is CurrencyLoaded ) 
+              ? state.currency.close.first
+              : 10,
             gridData: FlGridData(
               getDrawingVerticalLine: (value) {
                 return FlLine(
@@ -38,6 +41,7 @@ class LinearChart extends StatelessWidget {
             ),
             lineBarsData: [
               LineChartBarData(
+                
                 isCurved: true,
                 colors: [
                   Theme.of(context).focusColor,
@@ -74,7 +78,9 @@ class LinearChart extends StatelessWidget {
               leftTitles: SideTitles(
                 showTitles: true,
                 getTextStyles: (context, value) {
-                  return Theme.of(context).textTheme.headline2;
+                  return Theme.of(context).textTheme.headline2?.copyWith(
+                    fontSize: 12
+                  );
                 },
               ),
               topTitles: SideTitles(
@@ -92,9 +98,9 @@ class LinearChart extends StatelessWidget {
             ),
           ),
           swapAnimationDuration: const Duration( seconds: 3 ),
-        );
-        }
       ),
+        );
+      }
     );
   }
 }

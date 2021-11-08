@@ -11,10 +11,21 @@ import '/data/repositories/remote/auth_repository.dart';
 import '/data/repositories/remote/yahoo_repository.dart';
 import '/data/repositories/remote/firestore_repository.dart';
 
+/* 
+  In the main process is where the program start,
+  inside we need to ensure thath the widgets are
+  initialized before initializing Firebase,
+  then the app is launched.
+*/
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(
+    /*
+      MultiBlocProvider is used to register
+      the blocs that are used in the entire
+      app as sate management.
+    */
     MultiBlocProvider(
       providers: [
         BlocProvider(

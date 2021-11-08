@@ -6,6 +6,11 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import '/constants/contants.dart';
 
+/*
+  [RfcRepository] is a class that interact as
+  our RFC backend validation, it help us to
+  contact to an API and return a response.
+*/
 class RfcRepository {
   static const _url = 'https://verifier.p.rapidapi.com/rfc/verify';
   final _dio = Dio();
