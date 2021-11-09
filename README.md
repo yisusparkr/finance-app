@@ -2,7 +2,7 @@
 Finance App was made as technical test using Flutter framework 💙.
 
 ## Run the app
-After download the project as .zip or after clone, is necessary to open the project in your prefered IDE and then open the puspec.yaml archive and get the pacgakes just presing `CTRL + S` or writting `pub get` in the terminal.
+After download the project as .zip or after clone, is necessary to open the project in your prefered IDE and then open the puspec.yaml archive and get the packages just pressing `CTRL + S` or writting `pub get` in the terminal, then just run the app.
 
 ## Screens
 At the moment this app have around 5 screens with different functions.
