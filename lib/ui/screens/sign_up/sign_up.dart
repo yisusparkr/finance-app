@@ -20,6 +20,7 @@ class SingUpScreen extends StatelessWidget {
         if ( state is SigningUp ) {
             showLoadingDialog(context, 'Signing up');
           } else if ( state is SignedUp ) {
+            navigateBack(context);
             navigateTo(
               context, 
               HomeScreen(user: state.user, isNew: true), 

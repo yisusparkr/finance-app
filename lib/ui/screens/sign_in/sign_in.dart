@@ -17,10 +17,11 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocListener<SignInBloc, SignInState>(
-        listener: (context, state) {
+        listener: (_, state) {
           if ( state is SigningIn ) {
-            showLoadingDialog(context, 'Signin in');
+            showLoadingDialog(context, 'Signing In');
           } else if ( state is SignedIn ) {
+            navigateBack(context);
             navigateTo(
               context, 
               HomeScreen(user: state.user, isNew: false), 

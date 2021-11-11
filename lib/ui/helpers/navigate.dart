@@ -4,24 +4,20 @@ void navigateTo( BuildContext context, Widget screen, [bool? replace] ) {
 
   if ( Platform.isAndroid ) {
     ( replace != null && replace ) 
-      ? Navigator.pushReplacement(
-        context, 
+      ? Navigator.of(context).pushReplacement(
         _androidNavigation(context, screen)
       )
-      : Navigator.push(
-        context, 
+      : Navigator.of(context).push(
         _androidNavigation(context, screen)
       );
   } else {
     ( replace != null && replace ) 
-      ? Navigator.pushReplacement(
-        context, 
+      ? Navigator.of(context).pushReplacement(
         CupertinoPageRoute(
           builder: (_) => screen
         )
       )
-      : Navigator.push(
-        context, 
+      : Navigator.of(context).push(
         CupertinoPageRoute(
           builder: (_) => screen
         )

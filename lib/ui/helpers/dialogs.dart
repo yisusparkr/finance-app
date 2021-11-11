@@ -1,18 +1,28 @@
 part of 'helpers.dart';
 
-void showLoadingDialog( BuildContext context, String title ) {
+void showLoadingDialog( BuildContext context, String title )  {
   if ( Platform.isIOS ) {
-    showDialog(
+    showDialog<void>(
+      barrierDismissible: false,
       context: context,
-      builder: (context) => CupertinoAlertDialog(
-        title: Text(title),
-        content: const Center(
-          child: CircularProgressIndicator(),
+      builder: (context) => WillPopScope(
+        onWillPop: () async => false,
+        child: CupertinoAlertDialog(
+          title: Text(title),
+          content: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxHeight: 100
+            ),
+            child: const Center(
+              child: CircularProgressIndicator(),
+            ),
+          ),
         ),
       ),
     );
   } else {
-    showDialog(
+    showDialog<void>(
+      barrierDismissible: false,
       context: context,
       builder: (context) => WillPopScope(
         onWillPop: () async => false,
