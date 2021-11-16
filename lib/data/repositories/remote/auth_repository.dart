@@ -15,6 +15,7 @@ class AuthRepository {
         email: user.email!, 
         password: user.password!
       );
+      return null;
     } on FirebaseAuthException catch(error) {
       return error.code;
     }
@@ -26,6 +27,7 @@ class AuthRepository {
         email: user.email!, 
         password: user.password!
       );
+      return null;
     } on FirebaseAuthException catch(error) {
       return error.code;
     }
